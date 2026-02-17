@@ -57,11 +57,6 @@ eventSchema.path('date').validate(function (value: Date) {
   return !isNaN(value.getTime());
 }, 'Invalid date');
 
-// Pre-save hook (redundant with timestamps but included per requirement)
-eventSchema.pre('save', function (next) {
-  this.updatedAt = new Date();
-  next();
-});
 
 export const Event: Model<IEvent> = mongoose.model<IEvent>(
   'Event',

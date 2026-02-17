@@ -152,35 +152,35 @@ http://localhost:3000/api/events
 }
 Response: 201 Created
 
+Postman:
+
 Get All Events
 
-GET /api/events
+GET 
+http://localhost:3000/api/events
 
-Returns all events.
 
 Filter by Category
 
 GET
+http://localhost:3000/api/events?category=Workshop
 
-/api/events?category=Workshop
 
 Filter by Date
 
-Returns events on or after a specific date.
-
 GET
-/api/events?date=2026-03-01
+http://localhost:3000/api/events?date=2026-03-01
 
 Get Event by ID
 
 GET
-/api/events/:id
+http://localhost:3000/api/events/:id
 Returns single event or 404 if not found.
 
 Update Event
 
 PUT
-/api/events/:id
+http://localhost:3000/api/events/:id
 
 Example:
 {
@@ -195,7 +195,7 @@ Example:
 Delete Event
 
 DELETE
-/api/events/:id
+http://localhost:3000/api/events/:id
 
 
 Error Handling
@@ -261,6 +261,98 @@ Express-validator middleware
 Recurring event support
 
 CSV export
+
+
+----- Test Database Information -----
+To populate the database for testing:
+
+1. Open Postman (or curl).
+2. Send a POST request to http://localhost:3000/api/events
+3. Copy/paste each JSON event from below into the body.
+
+[
+  {
+    "title": "Sprint Planning Session",
+    "description": "Plan tasks for upcoming development sprint",
+    "date": "2026-03-10T15:00:00Z",
+    "location": "Zoom",
+    "category": "Meeting",
+    "attendees": ["frank@example.com", "dev1@example.com", "dev2@example.com"]
+  },
+  {
+    "title": "Advanced Node.js Workshop",
+    "description": "Deep dive into Express middleware and architecture",
+    "date": "2026-04-05T18:00:00Z",
+    "location": "UCF Engineering Building",
+    "category": "Workshop",
+    "attendees": ["student1@ucf.edu", "student2@ucf.edu"]
+  },
+  {
+    "title": "Florida Tech Conference 2026",
+    "description": "Annual developer conference",
+    "date": "2026-06-20T13:00:00Z",
+    "location": "Orlando Convention Center",
+    "category": "Conference",
+    "attendees": ["speaker@example.com", "attendee@example.com"]
+  },
+  {
+    "title": "Doctor Appointment",
+    "description": "Annual physical checkup",
+    "date": "2026-02-28T09:30:00Z",
+    "location": "Downtown Medical Center",
+    "category": "Personal",
+    "attendees": []
+  },
+  {
+    "title": "Product Launch Strategy Meeting",
+    "description": "Finalize launch marketing plan",
+    "date": "2026-05-12T16:00:00Z",
+    "location": "Main Office Boardroom",
+    "category": "Meeting",
+    "attendees": ["marketing@example.com", "sales@example.com"]
+  },
+  {
+    "title": "Mock Technical Interview",
+    "description": "Practice backend system design questions",
+    "date": "2026-03-22T19:00:00Z",
+    "location": "Google Meet",
+    "category": "Personal",
+    "attendees": ["mentor@example.com"]
+  },
+  {
+    "title": "Startup Pitch Night",
+    "description": "Present MVP to investors",
+    "date": "2026-07-01T17:00:00Z",
+    "location": "Innovation Hub Orlando",
+    "category": "Conference",
+    "attendees": ["investor1@example.com", "investor2@example.com"]
+  },
+  {
+    "title": "JavaScript Bootcamp",
+    "description": "Intro to ES6+ and async programming",
+    "date": "2026-04-18T14:00:00Z",
+    "location": "Online - Zoom",
+    "category": "Workshop",
+    "attendees": ["studentA@example.com", "studentB@example.com"]
+  },
+  {
+    "title": "Q2 Performance Review",
+    "description": "Evaluate quarterly performance and KPIs",
+    "date": "2026-07-15T20:00:00Z",
+    "location": "Corporate HQ",
+    "category": "Meeting",
+    "attendees": ["manager@example.com", "frank@example.com"]
+  },
+  {
+    "title": "Developer Networking Night",
+    "description": "Meet local developers and exchange ideas",
+    "date": "2026-08-10T18:30:00Z",
+    "location": "Downtown Orlando Tech Bar",
+    "category": "Other",
+    "attendees": ["devA@example.com", "devB@example.com", "devC@example.com"]
+  }
+]
+
 
 Author
 
